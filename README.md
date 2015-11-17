@@ -12,9 +12,9 @@ You may run the app by running the `main.ahk` script, provided that you have the
 The script can be turned into an exe capable of running with no prerequisites using AHK's converter.
 
 ## Screenshots
-(https://raw.githubusercontent.com/petru-dimitriu/gac/master/generator.png)
-(https://raw.githubusercontent.com/petru-dimitriu/gac/master/symbols.png)
-(https://raw.githubusercontent.com/petru-dimitriu/gac/master/templates.png)
+![generator](https://raw.githubusercontent.com/petru-dimitriu/gac/master/generator.png)
+![symbols](https://raw.githubusercontent.com/petru-dimitriu/gac/master/symbols.png)
+![templates](https://raw.githubusercontent.com/petru-dimitriu/gac/master/templates.png)
 
 ## Limitations
 * Somewhat slow & silly.
