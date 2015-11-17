@@ -9,7 +9,7 @@ For instance, one may create symbols `v` and `c` and assign to each of them some
 ## Running and compiling
 You may run the app by running the `main.ahk` script, provided that you have the latest version of AutoHotkey, but it should also run on older versions.
 
-The script can be turned into an exe capable of running with no prerequisites using AHK's converter.
+The script can be turned into an exe capable of running under Windows with no prerequisites using AHK's converter.
 
 ## Screenshots
 ![generator](https://raw.githubusercontent.com/petru-dimitriu/gac/master/generator.png)
