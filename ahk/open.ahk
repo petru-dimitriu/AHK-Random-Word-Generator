@@ -5,7 +5,7 @@ Open(path)
 
     IfNotExist,%path%
       {
-        MsgBox 16,Error,Projectul specificat nu Exista.
+        MsgBox 16,Error,The specified project does not exist.
         Return
       }
     Else
@@ -24,12 +24,12 @@ Open(path)
 
         Gui, 1: hide
 Gui, 10: Font, S7 CDefault Bold, tahoma
-Gui, 10: Add, Text, x6 y20 w120 h410 , Project: %name%`nAuthor: %author%`nType: %type%`nNumar cuvinte: %nrcuv%
+Gui, 10: Add, Text, x6 y20 w120 h410 , Project: %name%`nAuthor: %author%`nType: %type%
 Gui, 10: Font, S8, tahoma
 Gui, 10: Add, GroupBox, x139 y19 w364 h200 , Word creation
 Gui, 10: Font, , 
 Gui, 10: Font, S8, tahoma
-Gui, 10: Add, Text, x146 y40 w350 h70 , Words are randomly created based on some templates (like vowel-consonant-vowel-consonant-vowel, etc). These are stored as symbol-strings (ex. vcvcv). Both the symbols and the letters/letter groups they may reprezent can be manually edited.
+Gui, 10: Add, Text, x146 y40 w350 h70 , Words are generated randomly based on some templates (ex. vowel-consonant-vowel-consonant-vowel, etc). These are stored as symbol-strings (ex. vcvcv). Both the symbols and the letters/letter groups they may represent can be manually edited.
 Gui, 10: Add, Text, x146 y132 w130 h20 , No. of templates: %nrTemplates%
 Gui, 10: Add, Text, x146 y161 w132 h20 , No. of symbols: %nrSymbols%
 Gui, 10: Add, Button, x275 y129 w156 h25 gViewTemplates, View/edit templates

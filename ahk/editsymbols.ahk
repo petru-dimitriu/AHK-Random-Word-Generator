@@ -18,7 +18,7 @@ Editaresymbol(symbol)
       }
     StringReplace,LetterList,LetterList,|,,
     Gui, 13: Font, S8 CDefault, Tahoma
-    Gui, 13: Add, Text, x6 y10 w370 h60 , Here you can edit the letters/grouping represented by "%symbol%". Elements are shown below in this form: <element> <freq 1> <freq 2> <freq 3>. Select an element and use the controls below to modify it.
+    Gui, 13: Add, Text, x6 y10 w370 h60 , Here you can edit the letters/groups represented by "%symbol%". Elements are displayed below in the form: <element> <freq 1> <freq 2> <freq 3>. Select an element and use the sliders below to alter it.
     Gui, 13: Add, GroupBox, x6 y70 w370 h190 , List
     Gui, 13: Add, ListBox, x16 y90 w350 h160 vLetterListItem gLetterList, %LetterList%
     Gui, 13: Add, Button, x16 y270 w60 h30 gAddLetter, Add
@@ -65,7 +65,7 @@ LetterList:
   Loop,Parse,LetterListItem,%A_Space%
     {
       If A_Index=1
-          LiteraSelectata=%A_LoopField%
+          SelectedLetter=%A_LoopField%
       If A_Index=2
         {
           GuiControl,13:,Fec1,%A_LoopField%
@@ -87,30 +87,30 @@ Return
 
 Fec1:
   Gui,13:Submit,NoHide
-  StringReplace,LetterList,LetterList,%LiteraSelectata% %Fec1_vechi% %Fec2% %Fec3%,%LiteraSelectata% %Fec1% %Fec2% %Fec3%
+  StringReplace,LetterList,LetterList,%SelectedLetter% %Fec1_vechi% %Fec2% %Fec3%,%SelectedLetter% %Fec1% %Fec2% %Fec3%
   GuiControl,13:,LetterListItem,|%LetterList%
   Fec1_vechi:=Fec1
-  GuiControl, 13: ChooseString, LetterListItem,%LiteraSelectata% %Fec1% %Fec2% %Fec3%
+  GuiControl, 13: ChooseString, LetterListItem,%SelectedLetter% %Fec1% %Fec2% %Fec3%
 Return
 
 Fec2:
   Gui,13:Submit,NoHide
-  StringReplace,LetterList,LetterList,%LiteraSelectata% %Fec1% %Fec2_vechi% %Fec3%,%LiteraSelectata% %Fec1% %Fec2% %Fec3%
+  StringReplace,LetterList,LetterList,%SelectedLetter% %Fec1% %Fec2_vechi% %Fec3%,%SelectedLetter% %Fec1% %Fec2% %Fec3%
   GuiControl,13:,LetterListItem,|%LetterList%
   Fec2_vechi:=Fec2
-  GuiControl, 13: ChooseString, LetterListItem,%LiteraSelectata% %Fec1% %Fec2% %Fec3%
+  GuiControl, 13: ChooseString, LetterListItem,%SelectedLetter% %Fec1% %Fec2% %Fec3%
 Return
 
 Fec3:
   Gui,13:Submit,NoHide
-  StringReplace,LetterList,LetterList,%LiteraSelectata% %Fec1% %Fec2% %Fec3_vechi%,%LiteraSelectata% %Fec1% %Fec2% %Fec3%
+  StringReplace,LetterList,LetterList,%SelectedLetter% %Fec1% %Fec2% %Fec3_vechi%,%SelectedLetter% %Fec1% %Fec2% %Fec3%
   GuiControl,13:,LetterListItem,|%LetterList%
   Fec3_vechi:=Fec3
-  GuiControl, 13: ChooseString, LetterListItem,%LiteraSelectata% %Fec1% %Fec2% %Fec3%
+  GuiControl, 13: ChooseString, LetterListItem,%SelectedLetter% %Fec1% %Fec2% %Fec3%
 Return
 
 AddLetter:
-  InputBox,AddedLetter,Add letter/group of letters,Write the letter or group of letters for which you will set a frequency of appearance.
+  InputBox,AddedLetter,Add letter/group of letters,Write the letter or group of letters for which you will later set a frequency of appearance.
   If !ErrorLevel
     {
       if LetterList<>
@@ -126,7 +126,7 @@ RemoveLetter:
   Gui,13: Submit,NoHide
   If not (LetterListItem=%nul%)
     {
-      MsgBox,52,Warning,Are you sure you want to remove this?`nWARNING: This is irreversible.
+      MsgBox,52,Warning,Are you sure you want to remove this?`nWARNING: This cannot be undone.
       IfMsgBox yes
         {
           StringReplace,LetterList,LetterList,%LetterListItem%,

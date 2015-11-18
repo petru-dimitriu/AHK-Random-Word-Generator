@@ -4,15 +4,15 @@ Menu, File, add, Open project, OpenProject
 Menu, File, add,
 Menu, File, add, Exit, GuiClose
 Menu, Help, add, About, About
-Menu, BaraMeniu, add, File, :File
-Menu, BaraMeniu, add, Help, :Help
+Menu, MenuBar, add, File, :File
+Menu, MenuBar, add, Help, :Help
 Gui, Font, S15 CDefault Bold, tahoma
 Gui, Add, Text, x26 y10 w430 h30 , Random Word Generating App
 Gui, Font, , 
 Gui, Font, S8, tahoma
 Gui, Add, Text, x26 y50 w430 h20 , Petru Dimitriu, 2009
 Gui, Show, center h86 w472, Random Word Generating App
-Gui, Menu, BaraMeniu
+Gui, Menu, MenuBar
 return
 
 CreatedeProject:
